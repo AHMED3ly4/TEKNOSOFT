@@ -33,6 +33,12 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_screenutil: ^5.9.0
   flutter_bloc: ^8.1.5
+  dio: ^5.4.3+1
+  fluttertoast: ^8.2.5
+  shared_preferences: ^2.2.3
+  dartz: ^0.10.1
+  get_it: ^7.6.9
+  injectable: ^2.4.1
 
 dev_dependencies:
   flutter_test:
@@ -44,6 +50,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
+  build_runner: ^2.4.9
+  injectable_generator: ^2.6.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -57,9 +65,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
