@@ -1,10 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce/core/theming/app_theme.dart';
-import 'package:e_commerce/features/home/presentation/widgets/home_subsection.dart';
+import 'package:e_commerce/features/home/presentation/widgets/brands_section.dart';
+import 'package:e_commerce/features/home/presentation/widgets/categories_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeTab extends StatelessWidget {
+  const HomeTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -38,11 +41,16 @@ class HomeTab extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(
-                  Icons.shopping_cart_outlined,
-                size: 30,
+               Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                  onTap: (){
+                    // TODO: MOVE TO CART
+                  },
+                  child: const Icon(
+                    Icons.shopping_cart_outlined,
+                  size: 30,
+                  ),
                 ),
               ),
             ],
@@ -74,8 +82,8 @@ class HomeTab extends StatelessWidget {
               ),
             ),
           ),
-          HomeSubsection(),
-          HomeSubsection(),
+          CategoriesSection(),
+          BrandsSection(),
         ],
       ),
     );

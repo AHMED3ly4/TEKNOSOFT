@@ -1,9 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce/core/theming/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeSubsection extends StatelessWidget {
-  const HomeSubsection({super.key});
+  final String sectionName;
+  final List<String> ids;
+  final List<String> names;
+  final List<String> imagePaths;
+  HomeSubsection({super.key, required this.ids, required this.names, required this.imagePaths, required this.sectionName});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +18,7 @@ class HomeSubsection extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text('Categories',
+              Text(sectionName,
                 style: Theme.of(context).textTheme.titleSmall!.copyWith(
                     color: AppTheme.blueColor,
                     fontWeight: FontWeight.w600
@@ -34,7 +39,7 @@ class HomeSubsection extends StatelessWidget {
             height: 250.h,
             child: GridView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: 15,
+              itemCount: imagePaths.length,
               gridDelegate:  const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 0,
@@ -42,14 +47,14 @@ class HomeSubsection extends StatelessWidget {
               itemBuilder: (context, index) => Column(
                 children: [
                   CircleAvatar(
-                    backgroundImage: AssetImage(
-                      "assets/images/route_blue.png",
-
+                    backgroundImage: CachedNetworkImageProvider(
+                      imagePaths[index],
+                      errorListener: (p0) => Icon(Icons.error),
                     ),
                     radius: 40.r,
                   ),
-                  const Text(
-                    "men's \n fashion",
+                   Text(
+                    names[index],
                     textAlign: TextAlign.center,
                   ),
                 ],
