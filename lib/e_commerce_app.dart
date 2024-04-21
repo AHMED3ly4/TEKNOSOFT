@@ -17,10 +17,11 @@ class ECommerceApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: AppTheme.themeData,
+        initialRoute: HomeScreen.routeName,
         routes: {
           LoginScreen.routeName: (context) => LoginScreen(),
           RegisterScreen.routeName: (context) => RegisterScreen(),
-          HomeScreen.routeName: (context) => const HomeScreen(),
+          HomeScreen.routeName: (context) =>  HomeScreen(),
         },
       ),
     );

@@ -8,6 +8,10 @@ class AppTheme{
 
   static ThemeData themeData =ThemeData(
       primaryColor: blueColor,
+    scaffoldBackgroundColor: whiteColor,
+    iconTheme: const IconThemeData(
+      color: blueColor
+    ),
     textTheme: const TextTheme(
       titleMedium: TextStyle(
         fontSize: 24,
@@ -24,6 +28,14 @@ class AppTheme{
         fontWeight: FontWeight.normal,
         color: whiteColor
       ),
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: blueColor,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      elevation: 0,
+      type: BottomNavigationBarType.fixed,
+
     ),
       );
 }
