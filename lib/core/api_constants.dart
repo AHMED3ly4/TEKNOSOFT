@@ -4,5 +4,6 @@ class APIConstants{
   static const registerEndPoint='auth/signup';
   static const categoriesEndPoint='categories';
   static const brandsEndPoint='brands';
+  static const allProductsEndPoint='products';
 
 }

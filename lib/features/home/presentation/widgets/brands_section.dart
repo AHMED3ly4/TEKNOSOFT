@@ -1,10 +1,12 @@
 import 'package:e_commerce/core/gi/service_locator.dart';
+import 'package:e_commerce/core/indicators/shimmer_loading.dart';
 import 'package:e_commerce/core/theming/app_theme.dart';
 import 'package:e_commerce/features/home/presentation/cubit/home_cubit.dart';
 import 'package:e_commerce/features/home/presentation/cubit/home_states.dart';
 import 'package:e_commerce/features/home/presentation/widgets/home_subsection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
 class BrandsSection extends StatefulWidget {
@@ -28,19 +30,14 @@ class _BrandsSectionState extends State<BrandsSection> {
       child: BlocBuilder<HomeCubit,HomeStates>(
         builder: (context, state) {
           if(state is GetBrandsLoading){
-            return SizedBox(
-              height: 300,
-              child: Shimmer.fromColors(
-                baseColor: Colors.grey,
-                highlightColor: Colors.white,
-                child: HomeSubsection(
-                  sectionName: 'Brands',
-                  ids:List.generate(6, (index) => "0"),
-                  names: List.generate(6, (index) => ""),
-                  imagePaths: List.generate(6, (index) => "assets/images/route_blue.png"),
-                ),
+            return ShimmerLoading(
+              child: HomeSubsection(
+                sectionName: 'Brands',
+                ids:List.generate(6, (index) => ""),
+                names: List.generate(6, (index) => ""),
+                imagePaths: List.generate(6, (index) => "assets/images/route_blue.png"),
               ),
-            );
+            ); //fake data
           }
           else if(state is GetBrandsSuccess){
             final brands = state.brands;

@@ -56,30 +56,26 @@ class HomeTab extends StatelessWidget {
             ],
           ),
           SizedBox(height: 16.h,),
-          SizedBox(
-            height: 200.h,
-            width: double.infinity,
-            child: CarouselSlider(
-              items: [
-                Image.asset(
-                  "assets/images/Variant1.png",
-                ),
-                Image.asset(
-                  "assets/images/Variant2.png",
-                ),
-                Image.asset(
-                  "assets/images/Variant3.png",
-                ),
-              ],
-              options: CarouselOptions(
-                viewportFraction: 0.98,
-                initialPage: 0,
-                enableInfiniteScroll: true,
-                autoPlay: true,
-                enlargeCenterPage: true,
-                enlargeFactor: 0.7,
-                scrollDirection: Axis.horizontal,
+          CarouselSlider(
+            items: [
+              Image.asset(
+                "assets/images/Variant1.png",
               ),
+              Image.asset(
+                "assets/images/Variant2.png",
+              ),
+              Image.asset(
+                "assets/images/Variant3.png",
+              ),
+            ],
+            options: CarouselOptions(
+              viewportFraction: 0.98,
+              initialPage: 0,
+              enableInfiniteScroll: true,
+              autoPlay: true,
+              enlargeCenterPage: true,
+              enlargeFactor: 0.7,
+              scrollDirection: Axis.horizontal,
             ),
           ),
           CategoriesSection(),

@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/gi/service_locator.dart';
+import 'package:e_commerce/core/indicators/shimmer_loading.dart';
 import 'package:e_commerce/core/theming/app_theme.dart';
 import 'package:e_commerce/features/home/presentation/cubit/home_cubit.dart';
 import 'package:e_commerce/features/home/presentation/cubit/home_states.dart';
@@ -29,19 +30,15 @@ class _CategoriesSectionState extends State<CategoriesSection> {
       child: BlocBuilder<HomeCubit,HomeStates>(
           builder: (context, state) {
             if(state is GetCategoriesLoading){
-              return SizedBox(
-                height: 300,
-                child: Shimmer.fromColors(
-                    child: HomeSubsection(
-                      sectionName: 'Categories',
-                      ids:List.generate(6, (index) => "men"),
-                      names: List.generate(6, (index) => ""),
-                      imagePaths: List.generate(6, (index) => "assets/images/route_blue.png"),
-                    ),
-                    baseColor: Colors.grey,
-                    highlightColor: Colors.white,
-                ),
+              return ShimmerLoading(
+                  child: HomeSubsection(
+                    sectionName: 'Categories',
+                    ids:List.generate(6, (index) => ""),
+                    names: List.generate(6, (index) => ""),
+                    imagePaths: List.generate(6, (index) => "assets/images/route_blue.png"),
+                  ), //fake data
               );
+
             }
             else if(state is GetCategoriesSuccess){
               final categories = state.categories;
