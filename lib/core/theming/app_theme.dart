@@ -1,10 +1,12 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTheme{
   static const blueColor = Color(0xFF004182);
   static const whiteColor = Colors.white;
   static const blackColor = Colors.black;
+  static const greyColor = Colors.grey;
 
   static ThemeData themeData =ThemeData(
       primaryColor: blueColor,
@@ -12,7 +14,7 @@ class AppTheme{
     iconTheme: const IconThemeData(
       color: blueColor
     ),
-    textTheme: const TextTheme(
+    textTheme:  const TextTheme(
       titleMedium: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.w600,

@@ -36,7 +36,7 @@ class HomeSubsection extends StatelessWidget {
           ),
           SizedBox(height: 16.h,),
           SizedBox(
-            height: 250.h,
+            height: 270.h,
             child: GridView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: imagePaths.length,
@@ -56,6 +56,9 @@ class HomeSubsection extends StatelessWidget {
                    Text(
                     names[index],
                     textAlign: TextAlign.center,
+                     style: TextStyle(
+                       fontSize: 14.sp,
+                     ),
                   ),
                 ],
               ),
