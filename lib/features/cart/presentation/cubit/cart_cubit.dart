@@ -32,14 +32,16 @@ class CartCubit extends Cubit<CartStates>{
           (_) => emit(AddToCartSuccess()),
     );
   }
+
   Future<void> removeFromCart(String productId)async {
     emit(CartLoading());
     final result= await removeFromCartUC(productId);
     result.fold(
-          (failure) => emit(RemoveFromError(failure.message)),
+          (failure) => emit(RemoveFromCartError(failure.message)),
           (_) => emit(RemoveFromCartSuccess()),
     );
   }
+
   Future<void> updateCartProductQuantity(String productId,int updatedQuantity)async {
     emit(CartLoading());
     final result= await updateProductQuantityUC(productId,updatedQuantity);

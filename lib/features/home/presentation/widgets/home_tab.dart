@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce/core/theming/app_theme.dart';
 import 'package:e_commerce/features/cart/presentation/screens/cart_screen.dart';
+import 'package:e_commerce/features/cart/presentation/widgets/open_cart_icon.dart';
 import 'package:e_commerce/features/home/presentation/widgets/brands_section.dart';
 import 'package:e_commerce/features/home/presentation/widgets/categories_section.dart';
 import 'package:flutter/material.dart';
@@ -42,18 +43,7 @@ class HomeTab extends StatelessWidget {
                   ),
                 ),
               ),
-               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: InkWell(
-                  onTap: (){
-                    Navigator.pushNamed(context, CartScreen.routeName);
-                  },
-                  child: const Icon(
-                    Icons.shopping_cart_outlined,
-                  size: 30,
-                  ),
-                ),
-              ),
+               const OpenCartIcon(),
             ],
           ),
           SizedBox(height: 16.h,),

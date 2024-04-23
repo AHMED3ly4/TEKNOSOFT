@@ -30,10 +30,11 @@ class ClearCartError extends CartStates{
 }
 
 class RemoveFromCartSuccess extends CartStates{}
-class RemoveFromError extends CartStates{
+class RemoveFromCartLoading extends CartStates{}
+class RemoveFromCartError extends CartStates{
   final String errorMessage;
 
-  RemoveFromError(this.errorMessage);
+  RemoveFromCartError(this.errorMessage);
 }
 
 class UpdateProductQuantitySuccess extends CartStates{}

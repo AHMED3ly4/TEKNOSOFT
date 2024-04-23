@@ -51,6 +51,9 @@ class CartAPIRemoteDataSource implements CartRemoteDataSource{
     try{
       final response = await _dio.post(
         APIConstants.cartEndPoint,
+        data: {
+          "productId": productId,
+        },
         options: Options(
           headers: {
             "token":token

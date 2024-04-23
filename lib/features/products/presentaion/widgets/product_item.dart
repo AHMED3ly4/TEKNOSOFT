@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce/core/indicators/shimmer_loading.dart';
 import 'package:e_commerce/core/theming/app_theme.dart';
+import 'package:e_commerce/features/cart/presentation/widgets/add_product_to_cart_icon.dart';
 import 'package:e_commerce/features/products/domain/entities/product.dart';
 import 'package:e_commerce/features/products/presentaion/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
@@ -100,11 +101,10 @@ class ProductItem extends StatelessWidget {
 
                         ],
                       ),
+
                     ],
                   ),
-                  Image.asset(
-                    'assets/images/add_icon.png',
-                  ),
+                  AddProductToCartIcon(productId: product!.id,),
                 ],
               ),
 

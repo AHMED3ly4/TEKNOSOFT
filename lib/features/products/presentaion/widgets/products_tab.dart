@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/gi/service_locator.dart';
 import 'package:e_commerce/core/indicators/shimmer_loading.dart';
 import 'package:e_commerce/core/theming/app_theme.dart';
+import 'package:e_commerce/features/cart/presentation/widgets/open_cart_icon.dart';
 import 'package:e_commerce/features/products/domain/entities/product.dart';
 import 'package:e_commerce/features/products/presentaion/cubit/product_states.dart';
 import 'package:e_commerce/features/products/presentaion/cubit/products_cubit.dart';
@@ -54,18 +55,7 @@ final ProductsCubit cubit =getIt.get<ProductsCubit>();
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: (){
-                  // TODO: MOVE TO CART
-                },
-                child: const Icon(
-                  Icons.shopping_cart_outlined,
-                  size: 30,
-                ),
-              ),
-            ),
+            const OpenCartIcon(),
           ],
         ),
         BlocBuilder<ProductsCubit,ProductsState>(
@@ -78,12 +68,11 @@ final ProductsCubit cubit =getIt.get<ProductsCubit>();
                         itemCount: 8,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisSpacing:16.h,
+                          mainAxisSpacing: 16.h,
                           crossAxisCount: 2,
-                          childAspectRatio: 191/230,
+                          childAspectRatio: 191/192,
                         ),
-                        itemBuilder: (context, index) => ProductItem(
-
-                        ),
+                        itemBuilder: (context, index) => ProductItem(),
                       )
                   ),
                 );
