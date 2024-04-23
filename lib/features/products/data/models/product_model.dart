@@ -22,7 +22,7 @@ class ProductModel extends Product{
       required super.id,
     });
 
-    late final List<Subcategory> subcategory;
+    late final List<Subcategory>? subcategory;
     late final String reId;
     late final String slug;
     late final String? createdAt;
@@ -46,23 +46,5 @@ class ProductModel extends Product{
       ratingsAverage: json["ratingsAverage"],
     );
 
-    Map<String, dynamic> toJson() {
-      final _data = <String, dynamic>{};
-      _data['sold'] = sold;
-      _data['images'] = images;
-      _data['subcategory'] = subcategory.map((e)=>e.toJson()).toList();
-      _data['ratingsQuantity'] = ratingsQuantity;
-      _data['_id'] = reId;
-      _data['title'] = title;
-      _data['slug'] = slug;
-      _data['description'] = description;
-      _data['quantity'] = quantity;
-      _data['price'] = price;
-      _data['imageCover'] = imageCover;
-      _data['ratingsAverage'] = ratingsAverage;
-      _data['createdAt'] = createdAt;
-      _data['updatedAt'] = updatedAt;
-      _data['id'] = id;
-      return _data;
-    }
+
 }

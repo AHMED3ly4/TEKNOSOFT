@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce/core/theming/app_theme.dart';
 import 'package:e_commerce/features/products/domain/entities/product.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:readmore/readmore.dart';
@@ -15,8 +16,11 @@ class ProductDetailsScreen extends StatelessWidget {
     final product = ModalRoute.of(context)!.settings.arguments as Product;
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          Icon(Icons.shopping_cart_outlined),
+        actions:  [
+          GestureDetector(
+            onTap: (){},
+              child: Icon(Icons.shopping_cart_outlined),
+          ),
         ],
         title: const Text("Product details"),
         centerTitle: true,
@@ -35,7 +39,7 @@ class ProductDetailsScreen extends StatelessWidget {
               height: 350.h,
               width: double.infinity,
               child: CarouselSlider(
-                items: product.images.map((imagePath) => 
+                items: product.images?.map((imagePath) =>
                 CachedNetworkImage(
                     imageUrl: imagePath,
                   height: double.infinity,

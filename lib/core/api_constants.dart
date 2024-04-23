@@ -5,5 +5,6 @@ class APIConstants{
   static const categoriesEndPoint='categories';
   static const brandsEndPoint='brands';
   static const allProductsEndPoint='products';
+  static const cartEndPoint='cart';
 
 }
