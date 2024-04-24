@@ -10,7 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AddProductToCartIcon extends StatelessWidget {
   AddProductToCartIcon({super.key, required this.productId});
   final CartCubit cubit = getIt.get<CartCubit>() ;
-  final String productId;
+  final String? productId;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CartCubit,CartStates>(
@@ -25,7 +25,7 @@ class AddProductToCartIcon extends StatelessWidget {
           }else if(state is AddToCartSuccess){
             return InkWell(
               onTap: (){
-                cubit.removeFromCart(productId);
+                productId != null ? cubit.removeFromCart(productId!):null;
               },
               child: CircleAvatar(
                 backgroundColor: AppTheme.blueColor,
@@ -38,7 +38,7 @@ class AddProductToCartIcon extends StatelessWidget {
           }
           return InkWell(
             onTap: (){
-              cubit.addToCart(productId);
+              productId != null ? cubit.addToCart(productId!):null;
             },
             child: Image.asset(
               'assets/images/add_icon.png',

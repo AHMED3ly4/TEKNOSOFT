@@ -1,9 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce/core/theming/app_theme.dart';
+import 'package:e_commerce/features/cart/presentation/widgets/add_product_to_cart_button.dart';
+import 'package:e_commerce/features/cart/presentation/widgets/open_cart_icon.dart';
 import 'package:e_commerce/features/products/domain/entities/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:readmore/readmore.dart';
 
@@ -16,11 +19,8 @@ class ProductDetailsScreen extends StatelessWidget {
     final product = ModalRoute.of(context)!.settings.arguments as Product;
     return Scaffold(
       appBar: AppBar(
-        actions:  [
-          GestureDetector(
-            onTap: (){},
-              child: Icon(Icons.shopping_cart_outlined),
-          ),
+        actions:  const [
+          OpenCartIcon(),
         ],
         title: const Text("Product details"),
         centerTitle: true,
@@ -88,7 +88,7 @@ class ProductDetailsScreen extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  padding: EdgeInsetsDirectional.all(6),
+                  padding: const EdgeInsetsDirectional.all(6),
                   decoration: BoxDecoration(
                     border: Border.all(),
                     shape: BoxShape.rectangle,
@@ -128,25 +128,16 @@ class ProductDetailsScreen extends StatelessWidget {
               colorClickableText: AppTheme.greyColor,
               trimCollapsedText: 'Show more',
               trimExpandedText: 'Show less',
-              moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              moreStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
             ),
             const Spacer(),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                fixedSize: Size(398.w, 64.h),
-                backgroundColor: AppTheme.blueColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.r)
-                ),
-              ),
-              onPressed: (){},
-              child: Text(
-                "Add to cart",
-                style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    color: AppTheme.whiteColor
-                ),
-              ),
-            )
+            AddProductToCartButton(
+                productId: product.id,
+                fontSize: 24.sp,
+              width: double.infinity,
+              padding: const EdgeInsetsDirectional.symmetric(vertical: 10),
+              loadingWidget: const CircularProgressIndicator(),
+            ),
           ],
         ),
       ),

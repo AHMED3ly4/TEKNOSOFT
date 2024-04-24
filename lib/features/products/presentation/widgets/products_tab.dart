@@ -2,16 +2,16 @@ import 'package:e_commerce/core/gi/service_locator.dart';
 import 'package:e_commerce/core/indicators/shimmer_loading.dart';
 import 'package:e_commerce/core/theming/app_theme.dart';
 import 'package:e_commerce/features/cart/presentation/widgets/open_cart_icon.dart';
-import 'package:e_commerce/features/products/domain/entities/product.dart';
-import 'package:e_commerce/features/products/presentaion/cubit/product_states.dart';
-import 'package:e_commerce/features/products/presentaion/cubit/products_cubit.dart';
-import 'package:e_commerce/features/products/presentaion/widgets/product_item.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:e_commerce/features/products/presentation/cubit/product_states.dart';
+import 'package:e_commerce/features/products/presentation/cubit/products_cubit.dart';
+import 'package:e_commerce/features/products/presentation/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductsTab extends StatefulWidget {
+  const ProductsTab({super.key});
+
   @override
   State<ProductsTab> createState() => _ProductsTabState();
 }
@@ -72,7 +72,7 @@ final ProductsCubit cubit =getIt.get<ProductsCubit>();
                           crossAxisCount: 2,
                           childAspectRatio: 191/192,
                         ),
-                        itemBuilder: (context, index) => ProductItem(),
+                        itemBuilder: (context, index) => const ProductItem(),
                       )
                   ),
                 );

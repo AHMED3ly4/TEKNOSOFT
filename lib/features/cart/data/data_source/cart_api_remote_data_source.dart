@@ -33,7 +33,6 @@ class CartAPIRemoteDataSource implements CartRemoteDataSource{
       );
       return CartResponse.fromJson(response.data);
     }catch(exception){
-      print(exception.toString());
       throw RemoteException('field to get cart');
     }
   }

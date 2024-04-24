@@ -9,6 +9,7 @@ import 'package:e_commerce/features/cart/presentation/widgets/cart_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartScreen extends StatefulWidget {
   static const routeName = "/cart screen ";
@@ -35,7 +36,12 @@ class _CartScreenState extends State<CartScreen> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.only(
+          top: 8,
+          right: 8,
+          left: 8,
+          bottom: 4
+        ),
         child: BlocConsumer<CartCubit,CartStates>(
           bloc: cubit,
           listener:(context, state) {
@@ -77,7 +83,12 @@ class _CartScreenState extends State<CartScreen> {
                   Row(
                     children: [
                       Text(
-                        "Total Price \n ${cartData.totalCartPrice}",
+                        "Total Price \nEGP ${cartData.totalCartPrice}",
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: AppTheme.blueColor,
+                          fontSize: 18.sp
+                        ),
                       ),
                       Expanded(
                         child: DefaultElevatedButton(

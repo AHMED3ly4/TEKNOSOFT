@@ -1,6 +1,6 @@
 
 import 'package:e_commerce/features/products/domain/use_cases/getAllProducts.dart';
-import 'package:e_commerce/features/products/presentaion/cubit/product_states.dart';
+import 'package:e_commerce/features/products/presentation/cubit/product_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 

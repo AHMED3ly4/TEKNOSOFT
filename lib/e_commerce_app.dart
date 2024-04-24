@@ -3,7 +3,7 @@ import 'package:e_commerce/features/auth/presentation/screens/login_screen.dart'
 import 'package:e_commerce/features/auth/presentation/screens/register_screen.dart';
 import 'package:e_commerce/features/cart/presentation/screens/cart_screen.dart';
 import 'package:e_commerce/features/home/presentation/screens/home_screen.dart';
-import 'package:e_commerce/features/products/presentaion/screens/product_details_screen.dart';
+import 'package:e_commerce/features/products/presentation/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,11 +21,11 @@ class ECommerceApp extends StatelessWidget {
         theme: AppTheme.themeData,
         initialRoute: LoginScreen.routeName,
         routes: {
-          LoginScreen.routeName: (context) => LoginScreen(),
-          RegisterScreen.routeName: (context) => RegisterScreen(),
+          LoginScreen.routeName: (context) => const LoginScreen(),
+          RegisterScreen.routeName: (context) => const RegisterScreen(),
           HomeScreen.routeName: (context) =>  HomeScreen(),
-          ProductDetailsScreen.routeName: (context) =>  ProductDetailsScreen(),
-          CartScreen.routeName: (context) =>  CartScreen(),
+          ProductDetailsScreen.routeName: (context) =>  const ProductDetailsScreen(),
+          CartScreen.routeName: (context) =>  const CartScreen(),
         },
       ),
     );

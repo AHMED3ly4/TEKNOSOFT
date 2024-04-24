@@ -2,11 +2,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce/core/indicators/shimmer_loading.dart';
 import 'package:e_commerce/core/theming/app_theme.dart';
 import 'package:e_commerce/features/cart/presentation/widgets/add_product_to_cart_icon.dart';
+import 'package:e_commerce/features/favourite/presentation/widgets/add_to_favourite_icon.dart';
 import 'package:e_commerce/features/products/domain/entities/product.dart';
-import 'package:e_commerce/features/products/presentaion/screens/product_details_screen.dart';
+import 'package:e_commerce/features/products/presentation/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:injectable/injectable.dart';
 
 class ProductItem extends StatelessWidget {
  final Product? product;
@@ -50,10 +50,12 @@ class ProductItem extends StatelessWidget {
                   ),
                   errorListener: (value) => SizedBox(),
                 )
-                    : Image.asset("assets/images/test_product.png"),
-                Image.asset(
-                  'assets/images/heart_icon.png',
+                    : Image.asset("assets/images/test_product.png",
+                  height: 128.h,
+                  width: double.infinity,
+                  fit: BoxFit.fill,
                 ),
+                AddToFavouriteIcon(productId: product?.id),
 
               ],
             ),
@@ -101,10 +103,9 @@ class ProductItem extends StatelessWidget {
 
                         ],
                       ),
-
                     ],
                   ),
-                  AddProductToCartIcon(productId: product!.id,),
+                  AddProductToCartIcon(productId: product?.id,),
                 ],
               ),
 
