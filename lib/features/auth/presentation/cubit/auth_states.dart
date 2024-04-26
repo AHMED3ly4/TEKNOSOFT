@@ -25,3 +25,33 @@ class RegisterError extends AuthStates{
   final String error;
   RegisterError(this.error);
 }
+
+class ForgetPasswordLoading extends AuthStates{}
+class ForgetPasswordSuccess extends AuthStates{
+  final String message;
+  ForgetPasswordSuccess(this.message);
+}
+class ForgetPasswordError extends AuthStates{
+  final String error;
+  ForgetPasswordError(this.error);
+}
+
+class VerifyResetCodeLoading extends AuthStates{}
+class VerifyResetCodeSuccess extends AuthStates{
+  final String message;
+  VerifyResetCodeSuccess(this.message);
+}
+class VerifyResetCodeError extends AuthStates{
+  final String error;
+  VerifyResetCodeError(this.error);
+}
+
+class ResetPasswordLoading extends AuthStates{}
+class ResetPasswordSuccess extends AuthStates{
+  final String token;
+  ResetPasswordSuccess(this.token);
+}
+class ResetPasswordError extends AuthStates{
+  final String error;
+  ResetPasswordError(this.error);
+}

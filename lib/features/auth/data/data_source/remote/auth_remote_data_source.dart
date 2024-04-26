@@ -6,4 +6,7 @@ import '../../models/register_response.dart';
 abstract class AuthRemoteDataSource{
   Future<LoginResponse> login(LoginRequest requestData);
   Future<RegisterResponse> register(RegisterRequest requestData);
+  Future<String> forgetPassword(String email);
+  Future<String> verifyResetCode(String code);
+  Future<String> resetPassword(String email,String newPassword);
 }

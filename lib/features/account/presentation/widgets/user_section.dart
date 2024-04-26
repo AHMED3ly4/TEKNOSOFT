@@ -52,7 +52,9 @@ class _UserSectionState extends State<UserSection> {
                   IconButton(
                     onPressed: ()async{
                       final sharedpref= await SharedPreferences.getInstance();
-                      sharedpref.setString("token", "");
+                      sharedpref.setString("token", " ");
+                      sharedpref.setString("email", " ");
+                      sharedpref.setString("name", " ");
                       Navigator.pushReplacementNamed(context, LoginScreen.routeName);
                     },
                     icon: Icon(Icons.logout),

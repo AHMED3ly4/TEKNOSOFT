@@ -1,7 +1,10 @@
 import 'package:e_commerce/core/theming/app_theme.dart';
 import 'package:e_commerce/features/account/presentation/screens/add_address_screen.dart';
+import 'package:e_commerce/features/auth/presentation/screens/forget_password_screen.dart';
 import 'package:e_commerce/features/auth/presentation/screens/login_screen.dart';
 import 'package:e_commerce/features/auth/presentation/screens/register_screen.dart';
+import 'package:e_commerce/features/auth/presentation/screens/reset_password_screen.dart';
+import 'package:e_commerce/features/auth/presentation/screens/verify_reset_code_screen.dart';
 import 'package:e_commerce/features/cart/presentation/screens/cart_screen.dart';
 import 'package:e_commerce/features/home/presentation/screens/home_screen.dart';
 import 'package:e_commerce/features/products/presentation/screens/product_details_screen.dart';
@@ -28,6 +31,9 @@ class ECommerceApp extends StatelessWidget {
           ProductDetailsScreen.routeName: (context) =>  const ProductDetailsScreen(),
           CartScreen.routeName: (context) =>  const CartScreen(),
           AddAddressScreen.routeName: (context) =>   AddAddressScreen(),
+          ForgetPasswordScreen.routeName: (context) =>   ForgetPasswordScreen(),
+          VerifyResetCodeScreen.routeName: (context) =>   VerifyResetCodeScreen(),
+          ResetPasswordScreen.routeName: (context) =>   const ResetPasswordScreen(),
         },
       ),
     );
