@@ -7,5 +7,6 @@ class APIConstants{
   static const allProductsEndPoint='products';
   static const cartEndPoint='cart';
   static const favouriteEndPoint='wishlist';
+  static const addressEndPoint='addresses';
 
 }

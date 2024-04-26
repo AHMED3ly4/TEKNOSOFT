@@ -21,6 +21,7 @@ class AuthRepositoryImpl implements AuthRepository{
       final response = await authRemoteDataSource.login(requestData);
       if (response.token != null && response.user != null) {
         authLocalDataSource.saveToken(response.token!);
+        authLocalDataSource.saveUser(response.user!);
         return Right(response.user!);
       } else {
         return Left(Failure());
@@ -30,12 +31,17 @@ class AuthRepositoryImpl implements AuthRepository{
     }
   }
 
+
+
+
+
   @override
   Future<Either<Failure,User>> register(RegisterRequest requestData)async{
     try{
       final response = await authRemoteDataSource.register(requestData);
       if (response.token != null && response.user != null) {
         authLocalDataSource.saveToken(response.token!);
+        authLocalDataSource.saveUser(response.user!);
         return Right(response.user!);
       } else {
         return Left(Failure());

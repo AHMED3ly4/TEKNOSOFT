@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/theming/app_theme.dart';
+import 'package:e_commerce/features/account/presentation/screens/add_address_screen.dart';
 import 'package:e_commerce/features/auth/presentation/screens/login_screen.dart';
 import 'package:e_commerce/features/auth/presentation/screens/register_screen.dart';
 import 'package:e_commerce/features/cart/presentation/screens/cart_screen.dart';
@@ -26,6 +27,7 @@ class ECommerceApp extends StatelessWidget {
           HomeScreen.routeName: (context) =>  HomeScreen(),
           ProductDetailsScreen.routeName: (context) =>  const ProductDetailsScreen(),
           CartScreen.routeName: (context) =>  const CartScreen(),
+          AddAddressScreen.routeName: (context) =>   AddAddressScreen(),
         },
       ),
     );

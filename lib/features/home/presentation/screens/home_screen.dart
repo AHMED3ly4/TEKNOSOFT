@@ -1,5 +1,5 @@
 import 'package:e_commerce/core/theming/app_theme.dart';
-import 'package:e_commerce/features/account/account_tab.dart';
+import 'package:e_commerce/features/account/presentation/widgets/account_tab.dart';
 import 'package:e_commerce/features/favourite/presentation/widgets/favourite_tab.dart';
 import 'package:e_commerce/features/home/presentation/widgets/home_tab.dart';
 import 'package:e_commerce/features/home/presentation/widgets/navBarIcon.dart';
