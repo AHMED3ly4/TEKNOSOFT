@@ -48,14 +48,16 @@ class _UserSectionState extends State<UserSection> {
                     "Welcome, ${user.name!.split(" ")[0]}",
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(color: AppTheme.blueColor),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   IconButton(
                     onPressed: ()async{
-                      final sharedpref= await SharedPreferences.getInstance();
-                      sharedpref.setString("token", " ");
-                      sharedpref.setString("email", " ");
-                      sharedpref.setString("name", " ");
-                      Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+                      SharedPreferences.getInstance().then((sharedpref) {
+                        sharedpref.setString("token", " ");
+                        sharedpref.setString("email", " ");
+                        sharedpref.setString("name", " ");
+                        Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+                      });
+
                     },
                     icon: Icon(Icons.logout),
                   )
